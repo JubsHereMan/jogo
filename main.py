@@ -1,7 +1,9 @@
 import os
+from time import sleep
 from personagens import jubs, seth, low
+from inimigosFloresta import *
 
-
+inimigos=[inimigosFloresta]
 def limpar_tela():
     """Limpa a tela do console dependendo do sistema operacional."""
     sistema = os.name
@@ -19,6 +21,8 @@ def iniciar_jogo():
         menu()
     else:
         print('Opção inválida.')
+
+
 
 
 def menu():
@@ -145,10 +149,38 @@ def curaTemporal(jubs):
         print(f'{jubs["nome"]} não pode usar a habilidade de cura temporal.')
 
 
+
+
+
+
 iniciar_jogo()
 
 limpar_tela()
 if personagem_escolhido_nome:
     print(
         '\nEm uma floresta sombria um herói chega. Aquele que nos salvará da perdição trazida pelo grande rei demônio.'
-        f'\n{personagem_escolhido_nome} está aqui para salvar o dia!')
+        f'\n{personagem_escolhido_nome} está aqui para salvar o dia!\n')
+
+sleep(0.75)
+print('CAPITULO | \nA GRANDE FLORESTA\n')
+
+
+sleep(0.5)
+entrarFloresta=int(input(f'\n{personagem_escolhido_nome} ao chegar na floresta você consegue perceber que coisas estão estranhas,'
+                     f'uma grande massa roxa e pulsante esta cobrindo as arvores.\n Você sente repulsa em apenas ter ideia de entrar na grande floresta '
+                     f'\no que você ira fazer?'
+                     f'\n1. Entrar na floresta'
+                     f'\n2. Deixar a aventura de lado e voltar para a segurança de casa \n'))
+
+if entrarFloresta == 1:
+    print('Ao entrar na floresta um odor indescritivel invade as suas narinas '
+          '\nao olhar para os lados você se depara com marcas de garras que estão com esse mesmo residuo das arvores'
+          '\n você não está sozinho... agora não ha mais volta... lembre-se disso.')
+elif entrarFloresta == 2:
+    print('\nAo voltar para sua casa, você consegue acompanhar com os proprios olhos enquanto o grande rei demonio espalha alguma coisa'
+          '\n sobre os 4 ventos que esta infectando tudo e todos... uma doença lastimavel que infecta e faz com que as pessoas não sejam'
+          '\n mais donas dos seus proprios corpos... vocÊ perdeu a chance de fazer a diferença...\n')
+    iniciar_jogo()
+else:
+    print('escolha uma opção valida!')
+    print(entrarFloresta)
