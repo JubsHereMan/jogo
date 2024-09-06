@@ -161,26 +161,53 @@ if personagem_escolhido_nome:
         '\nEm uma floresta sombria um herói chega. Aquele que nos salvará da perdição trazida pelo grande rei demônio.'
         f'\n{personagem_escolhido_nome} está aqui para salvar o dia!\n')
 
-sleep(0.75)
+sleep(1.0)
 print('CAPITULO | \nA GRANDE FLORESTA\n')
 
 
-sleep(0.5)
+sleep(1.5)
 entrarFloresta=int(input(f'\n{personagem_escolhido_nome} ao chegar na floresta você consegue perceber que coisas estão estranhas,'
                      f'uma grande massa roxa e pulsante esta cobrindo as arvores.\n Você sente repulsa em apenas ter ideia de entrar na grande floresta '
                      f'\no que você ira fazer?'
                      f'\n1. Entrar na floresta'
                      f'\n2. Deixar a aventura de lado e voltar para a segurança de casa \n'))
 
-if entrarFloresta == 1:
-    print('Ao entrar na floresta um odor indescritivel invade as suas narinas '
-          '\nao olhar para os lados você se depara com marcas de garras que estão com esse mesmo residuo das arvores'
-          '\n você não está sozinho... agora não ha mais volta... lembre-se disso.')
-elif entrarFloresta == 2:
-    print('\nAo voltar para sua casa, você consegue acompanhar com os proprios olhos enquanto o grande rei demonio espalha alguma coisa'
-          '\n sobre os 4 ventos que esta infectando tudo e todos... uma doença lastimavel que infecta e faz com que as pessoas não sejam'
-          '\n mais donas dos seus proprios corpos... vocÊ perdeu a chance de fazer a diferença...\n')
-    iniciar_jogo()
-else:
-    print('escolha uma opção valida!')
-    print(entrarFloresta)
+while entrarFloresta != 1 and 2:
+    print('Escolha uma upção valida!!\n')
+    entrarFloresta=int(input(f'\n{personagem_escolhido_nome} ao chegar na floresta você consegue perceber que coisas estão estranhas,'
+                     f'uma grande massa roxa e pulsante esta cobrindo as arvores.\n Você sente repulsa em apenas ter ideia de entrar na grande floresta '
+                     f'\no que você ira fazer?'
+                     f'\n1. Entrar na floresta'
+                     f'\n2. Deixar a aventura de lado e voltar para a segurança de casa \n'))
+match entrarFloresta:
+    case 1:
+        print('\nAo entrar na floresta um odor indescritivel invade as suas narinas '
+            '\nao olhar para os lados você se depara com marcas de garras que estão com esse mesmo residuo das arvores'
+            '\n você não está sozinho... agora não ha mais volta... lembre-se disso.')
+    case 2:
+        print('\nAo voltar para sua casa, você consegue acompanhar com os proprios olhos enquanto o grande rei demonio espalha alguma coisa'
+            '\n sobre os 4 ventos que esta infectando tudo e todos... uma doença lastimavel que infecta e faz com que as pessoas não sejam'
+            '\n mais donas dos seus proprios corpos... vocÊ perdeu a chance de fazer a diferença...\n')
+        
+        voltarMenu= 0
+        while voltarMenu != 1: 
+            voltarMenu= int(input('\ndigite 1 para voltar ao menu'))
+        iniciar_jogo()
+
+      
+    case _:
+        print('\nescolha uma opção valida!')
+        entrarFloresta
+
+escolhaCaminho1= int(input(f"logo de cara {personagem_escolhido_nome} consegue perceber dois caminhos distintos... qual vai ser a sua escolha?
+            \n 1. O caminho cheio das massas roxas
+            \n 2. O caminho com menos massas roxas"))
+
+    case 1:
+        print(f'''
+    \ncaminhando cada vez mais fundo na floresta {personagem_escolhido_nome} se depara mais ainda com essa massa roxa, agora cada vez mais presente no local...
+é dificil de respirar... com um olhar atento percebe-se que essa massa roxa esta soltando esporos...
+talvez não seja uma boa ideia avançar sem algo para se proteger...''')
+    case _:
+        print('')
+    
